@@ -28,5 +28,11 @@
   "exclude": [
     "node_modules",
     "cdk.out"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "node"
+    }
+  }
 }
