@@ -1,0 +1,62 @@
+# --- General ---
+.DS_Store
+.env
+.env.local
+.env.*.local
+*.log
+.vscode/
+.idea/
+.gemini/
+
+# --- Node.js (Frontend & Infra) ---
+node_modules/
+dist/
+build/
+.next/
+out/
+.npm
+.cache
+.parcel-cache
+.turbo
+.eslintcache
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# --- Java (Backend) ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/
+.metadata/
+.recommenders/
+.classpath
+.project
+.settings/
+bin/
+
+# --- AWS CDK ---
+cdk.out/
+.cdk.staging/
+
+# --- Docker & LocalStack ---
+.localstack/
+data/
+
+# --- Testing ---
+coverage/
+test-results/
+test_output.txt
+
+# --- AI
+.agents/
+.context/
+
+# --- MD
+*.md
+!README.md
+
+# --- Credentials
+credentials/**

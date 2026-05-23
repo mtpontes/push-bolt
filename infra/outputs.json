@@ -1,0 +1,23 @@
+{
+  "PushBolt-AuthStack-dev": {
+    "ExportsOutputRefUserPoolClient2F5918F753847A55": "41n6e1k3jn6uccom58acbmtr9c",
+    "ExportsOutputRefUserPool6BA7E5F296FD7236": "us-east-1_wX2EVCdtM",
+    "CognitoGoogleRedirectUri": "https://push-bolt-auth-dev-314146297418.auth.us-east-1.amazoncognito.com/oauth2/idpresponse",
+    "CognitoDomainUrl": "https://push-bolt-auth-dev-314146297418.auth.us-east-1.amazoncognito.com"
+  },
+  "PushBolt-StateStack-dev": {
+    "ExportsOutputRefMessagesTable05B58A27CCC43D33": "push-bolt-messages-dev",
+    "ExportsOutputFnGetAttUploadsBucket5E5E9B64Arn8603C131": "arn:aws:s3:::pushbolt-statestack-dev-uploadsbucket5e5e9b64-q8s7djjui1a4",
+    "ExportsOutputFnGetAttConnectionsTable8000B8A1Arn6FD6777C": "arn:aws:dynamodb:us-east-1:314146297418:table/push-bolt-connections-dev",
+    "ExportsOutputFnGetAttMessagesTable05B58A27Arn05106AA2": "arn:aws:dynamodb:us-east-1:314146297418:table/push-bolt-messages-dev",
+    "ExportsOutputRefUploadsBucket5E5E9B64F2F56CC2": "pushbolt-statestack-dev-uploadsbucket5e5e9b64-q8s7djjui1a4",
+    "ExportsOutputFnGetAttMessagesTable05B58A27StreamArn920464B0": "arn:aws:dynamodb:us-east-1:314146297418:table/push-bolt-messages-dev/stream/2026-05-23T13:40:01.558",
+    "ExportsOutputRefConnectionsTable8000B8A13717867F": "push-bolt-connections-dev"
+  },
+  "PushBolt-ApiStack-dev": {
+    "WebSocketApiUrl": "wss://gh20cl6yj2.execute-api.us-east-1.amazonaws.com/prod",
+    "UserPoolClientId": "41n6e1k3jn6uccom58acbmtr9c",
+    "UserPoolId": "us-east-1_wX2EVCdtM",
+    "HttpApiUrl": "https://s195kok1f1.execute-api.us-east-1.amazonaws.com/"
+  }
+}
