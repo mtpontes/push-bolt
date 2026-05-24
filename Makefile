@@ -4,7 +4,7 @@ ifneq ("$(wildcard .env)","")
     export
 endif
 
-.PHONY: build-backend deploy deploy-all destroy update-env check-env check-build
+.PHONY: build-backend deploy deploy-all destroy update-env check-env check-build fetch-outputs
 
 check-env:
 	@echo "Verificando usuário AWS atual..."
@@ -50,3 +50,8 @@ destroy:
 update-env:
 	@echo "Atualizando variáveis de ambiente do frontend..."
 	node ./scripts/update-frontend-env.js
+
+fetch-outputs:
+	@echo "Buscando outputs das stacks AWS CloudFormation..."
+	node ./scripts/fetch-aws-outputs.js
+	@$(MAKE) update-env

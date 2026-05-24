@@ -10,17 +10,14 @@ export const MessageList: React.FC = () => {
                 {items.map((msg) => (
                     <div key={msg.messageId} className={`message-item ${msg.type}`}>
                         <div className="message-header">
-                            <span className="user-id">{msg.userId}</span>
-                            <div className="header-right">
-                                <span className="timestamp">{new Date(msg.createdAt).toLocaleString()}</span>
-                                <button 
-                                    onClick={() => deleteMessage(msg.createdAt)} 
-                                    className="delete-message-btn"
-                                    title="Deletar mensagem"
-                                >
-                                    ✕
-                                </button>
-                            </div>
+                            <span className="timestamp">{new Date(msg.createdAt).toLocaleString()}</span>
+                            <button 
+                                onClick={() => deleteMessage(msg.createdAt)} 
+                                className="delete-message-btn"
+                                title="Deletar mensagem"
+                            >
+                                ✕
+                            </button>
                         </div>
                         <div className="message-body">
                             {msg.type === 'text' || msg.type === 'link' ? (

@@ -60,3 +60,5 @@ test_output.txt
 
 # --- Credentials
 credentials/**
+
+outputs.json
