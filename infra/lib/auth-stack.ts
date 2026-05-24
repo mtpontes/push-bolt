@@ -81,12 +81,15 @@ export class AuthStack extends cdk.Stack {
     ];
 
     if (process.env.FRONTEND_PROD_URL) {
-      callbackUrls.push(process.env.FRONTEND_PROD_URL);
-      logoutUrls.push(process.env.FRONTEND_PROD_URL);
-      if (!process.env.FRONTEND_PROD_URL.endsWith('/')) {
-        callbackUrls.push(`${process.env.FRONTEND_PROD_URL}/`);
-        logoutUrls.push(`${process.env.FRONTEND_PROD_URL}/`);
-      }
+      const prodUrl = process.env.FRONTEND_PROD_URL.trim();
+      const urlWithoutSlash = prodUrl.replace(/\/+$/, '');
+      const urlWithSlash = `${urlWithoutSlash}/`;
+      
+      callbackUrls.push(urlWithoutSlash);
+      callbackUrls.push(urlWithSlash);
+      
+      logoutUrls.push(urlWithoutSlash);
+      logoutUrls.push(urlWithSlash);
     }
 
     // 6. Criar o Client associando os Providers e OAuth
