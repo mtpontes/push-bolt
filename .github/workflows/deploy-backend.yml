@@ -2,6 +2,15 @@ name: Deploy Backend
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Selecione o ambiente de deploy (dev ou prod)'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - prod
 
 jobs:
   build-backend:
@@ -34,6 +43,7 @@ jobs:
     name: Deploy CDK Infrastructure
     runs-on: ubuntu-latest
     needs: build-backend
+    environment: ${{ github.event.inputs.environment }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -67,6 +77,6 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION || 'us-east-1' }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          STAGE: ${{ secrets.STAGE || 'dev' }}
+          STAGE: ${{ github.event.inputs.environment }}
           FRONTEND_PROD_URL: ${{ secrets.FRONTEND_PROD_URL }}
         run: make deploy
