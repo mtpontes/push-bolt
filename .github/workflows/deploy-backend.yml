@@ -75,8 +75,8 @@ jobs:
       - name: Deploy Infrastructure
         env:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION || 'us-east-1' }}
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID || vars.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET || vars.GOOGLE_CLIENT_SECRET }}
           STAGE: ${{ github.event.inputs.environment }}
-          FRONTEND_PROD_URL: ${{ secrets.FRONTEND_PROD_URL }}
+          FRONTEND_PROD_URL: ${{ secrets.FRONTEND_PROD_URL || vars.FRONTEND_PROD_URL }}
         run: make deploy
