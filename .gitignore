@@ -62,3 +62,4 @@ test_output.txt
 credentials/**
 
 outputs.json
+infra/outputs.json
