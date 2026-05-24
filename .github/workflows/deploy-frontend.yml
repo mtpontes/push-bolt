@@ -11,13 +11,6 @@ on:
         options:
           - dev
           - prod
-  push:
-    branches:
-      - master
-    paths:
-      - 'frontend/**'
-      - '.github/workflows/deploy-frontend.yml'
-      - 'scripts/fetch-aws-outputs.js'
 
 jobs:
   deploy-vercel:
